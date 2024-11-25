@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aylık Çalışma Raporu</title>
+  </head>
+  <body>
+    <h2>Aylık Çalışma Raporu</h2>
+    <table>
+      <tr>
+        <th>Personel</th>
+        <th>Toplam Geç Kalma Süresi (Dakika)</th>
+      </tr>
+      {% for item in rapor %}
+      <tr>
+        <td>{{ item.personel.get_full_name }}</td>
+        <td>{{ item.toplam_calisma_suresi }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="{% url 'yetkili:dashboard' %}">Geri Dön</a>
+  </body>
+</html>

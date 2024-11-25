@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>İzin Talep Et</title>
+  </head>
+  <body>
+    <h2>İzin Talep Et</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Talep Gönder</button>
+    </form>
+    <a href="{% url 'personel:dashboard' %}">Geri Dön</a>
+  </body>
+</html>

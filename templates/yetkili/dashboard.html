@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yetkili Dashboard</title>
+  </head>
+  <body>
+    <h2>Hoş Geldiniz, {{ request.user.get_full_name }}</h2>
+    <p>Tüm personel bilgilerine erişebilirsiniz.</p>
+    <a href="{% url 'hesaplar:logout' %}">Çıkış Yap</a>
+  </body>
+</html>

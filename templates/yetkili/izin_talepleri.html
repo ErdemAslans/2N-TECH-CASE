@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>İzin Talepleri</title>
+  </head>
+  <body>
+    <h2>İzin Talepleri</h2>
+    <table>
+      <tr>
+        <th>Personel</th>
+        <th>Başlangıç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>İşlemler</th>
+      </tr>
+      {% for izin in izinler %}
+      <tr>
+        <td>{{ izin.user.get_full_name }}</td>
+        <td>{{ izin.start_date }}</td>
+        <td>{{ izin.end_date }}</td>
+        <td>
+          <a href="{% url 'yetkili:izin_onayla' izin.id %}">Onayla</a> |
+          <a href="{% url 'yetkili:izin_reddet' izin.id %}">Reddet</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="{% url 'yetkili:dashboard' %}">Geri Dön</a>
+  </body>
+</html>
