@@ -28,17 +28,8 @@ git clone https://github.com/your-repo/company-management.git
 cd company-management
 ```
 
-### Step 2: Set Up the Environment
-Create a Python virtual environment and install the required dependencies:
 
-```bash
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
-.env\Scriptsctivate   # Windows
-pip install -r requirements.txt
-```
-
-### Step 3: Configure the Database
+### Step 2: Configure the Database
 Update the `DATABASES` section in the `settings.py` file with your PostgreSQL credentials:
 
 ```python
@@ -54,7 +45,7 @@ DATABASES = {
 }
 ```
 
-### Step 4: Apply Migrations
+### Step 3: Apply Migrations
 Run the following commands to apply database migrations:
 
 ```bash
@@ -62,14 +53,14 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### Step 5: Create a Superuser
+### Step 4: Create a Superuser
 Create an admin user to access the Django admin panel:
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### Step 6: Start the Server
+### Step 5: Start the Server
 Run the development server to test the application locally:
 
 ```bash
